@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Ensure items stack vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh;
+    margin: 0;
+    padding: 20px; /* Added padding for better mobile view */
+    box-sizing: border-box;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px; /* Adjusted for better positioning */
+    left: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10; /* Ensure the button is on top */
+}
+
+.container {
+    text-align: center;
+    margin-top: 60px; /* Added margin to separate from the back button */
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #6200ea;
+    justify-content: center;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+#tweetsContainer {
+    margin-top: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tweet {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px; /* Adjust border radius as per your preference */
+    margin-top: 40px; /* Ensure space between button and image */
+    display: block; /* Ensure the image is block-level for centering */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Reduce padding for mobile view */
+        height: auto; /* Adjust height for mobile */
+        justify-content: flex-start; /* Align items at the start vertically */
+    }
+
+    .back-button {
+        position: absolute;
+        top: 30px; /* Adjusted for better positioning */
+        left: 40px; /* Ensure it's at the top left */
+        font-size: 18px; /* Adjust font size for mobile */
+        padding: 3px;
+    }
+
+    img {
+        max-width: 90%; /* Make image larger on mobile */
+        margin-top: 30px; /* Ensure space between button and image */
+    }
+
+    .tweet {
+        padding: 10px; /* Adjust padding for mobile */
+        margin: 8px 0; /* Adjust margin for mobile */
+    }
+}

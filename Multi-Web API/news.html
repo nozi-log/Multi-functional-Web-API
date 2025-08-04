@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News App</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="news.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <button class="back-button" id="backButton"><i class="bx bx-arrow-back"></i></button>
+  <div class="heading-container">
+    <h4>News</h4>
+  </div>
+  <div class="options-container"></div>
+  <div class="container"></div>
+  
+  <!-- Script -->
+  <script src="news.js"></script>
+  <script>
+    // Select the back button
+    const backButton = document.getElementById('backButton');
+
+    // Add event listener to handle click
+    backButton.addEventListener('click', function() {
+      // Redirect to index.html or any other desired page
+      window.location.href = 'index.html';
+    });
+
+    // Function to log interaction
+    const logInteraction = (action) => {
+      const currentDate = new Date();
+      const log = {
+        action: action,
+        timestamp: currentDate.toLocaleString()
+      };
+
+      let interactions = JSON.parse(localStorage.getItem('interactions')) || [];
+      interactions.push(log);
+      localStorage.setItem('interactions', JSON.stringify(interactions));
+    };
+  </script>
+</body>
+</html>

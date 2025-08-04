@@ -1,0 +1,100 @@
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(255, 0, 102, 0.456), rgba(105, 68, 255, 0.516));
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    color: #fff; /* White text color */
+    margin-bottom: 20px; /* Add margin bottom to separate from the container */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    /* Removed background, border-radius, and box-shadow */
+}
+
+.box {
+    width: 90%; /* Adjust width for mobile screens */
+    max-width: 300px; /* Ensure boxes don't get too large on larger screens */
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Adjusted box-shadow for better visibility */
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.box img {
+    width: 60%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.box:hover img {
+    transform: scale(1.1);
+}
+
+.box-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Responsive Design for Mobile Layout */
+@media (max-width: 768px) {
+    .box {
+        width: 80%; /* Adjust width for smaller screens */
+        max-width: none; /* Remove max-width on smaller screens */
+    }
+
+    h1 {
+        font-size: 40px; /* Adjust font size for smaller screens */
+        margin-bottom: 15px; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        width: 80%; /* Use full width for very small screens */
+        height: 150px; /* Adjust height for smaller screens */
+    }
+
+    h1 {
+        font-size: 24px; /* Further adjust font size for smaller screens */
+        margin-bottom: 10px; /* Further adjust margin for smaller screens */
+    }
+
+    .box-title {
+        font-size: 1rem; /* Adjust title size for smaller screens */
+    }
+}

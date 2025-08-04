@@ -1,0 +1,186 @@
+/* Global reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body styles */
+body {
+  background-color: #f3f3f3;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Back button styles */
+.back-button {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 10; /* Ensure the back button is at the front */
+}
+
+/* Heading styles */
+.heading-container {
+  background: linear-gradient(to right, #9b59b6, #e91e63); /* Purple-pink gradient */
+  color: #ffffff;
+  font-size: 2.5em;
+  padding: 0.8em 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 50px 0 rgba(2, 0, 31, 0.3);
+  z-index: 1; /* Keep the heading above other content */
+}
+
+.heading-container h4 {
+  font-weight: 600;
+  font-size: 40px;
+  letter-spacing: 2px; /* Adjust letter spacing for better readability */
+}
+
+/* Options container styles */
+.options-container {
+  margin-top: 150px; /* Adjust spacing */
+  display: flex;
+  justify-content: center; /* Center the options */
+  gap: 1em;
+  padding: 1em;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of items */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.option {
+  background-color: #b185f3; /* Pink */
+  border: none;
+  cursor: pointer;
+  padding: 0.8em 1.5em;
+  border-radius: 0.5em;
+  text-transform: capitalize;
+  transition: background-color 0.3s ease; /* Smooth transition */
+  display: inline-block; /* Inline-block for horizontal scroll */
+  margin-right: 1em; /* Space between options */
+}
+
+.option:hover,
+.option.active {
+  background-color: #e184a9; /* Darker pink for active and hover state */
+  color: #ffffff;
+}
+
+/* Main content container */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1em;
+}
+
+/* News card styles */
+.news-card {
+  position: relative;
+  box-shadow: 0 0 15px rgba(85, 85, 85, 0.2);
+  margin: 1em 0;
+  border-radius: 15px;
+  overflow: hidden; /* Ensure content does not overflow */
+}
+
+.news-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px 15px 0 0;
+}
+
+.news-content {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Occupy full height */
+}
+
+.news-title {
+  font-weight: 600;
+  color: #0b0028;
+  font-size: 1.2em; /* Adjust font size */
+}
+
+.news-description {
+  color: #6f6f6f;
+  text-align: justify;
+  margin: 0.8em 0;
+  font-size: 0.9em; /* Adjust font size */
+  flex: 1; /* Allow description to expand */
+}
+
+/* Read more button */
+.view-button {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(to right, #9b59b6, #e91e63); /* Purple-pink gradient */
+  color: #ffffff;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  font-size: 0.9em; /* Adjust font size */
+  width: fit-content; /* Make button width fit content */
+  align-self: flex-end; /* Align button to the bottom of its container */
+}
+
+.view-button:hover {
+  background: linear-gradient(to right, #8e44ad, #c2185b); /* Darker gradient for hover state */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+  }
+
+  .news-card {
+    margin: 1em 0;
+  }
+
+  .heading-container h4 {
+    font-size: 30px; /* Adjust heading size for smaller screens */
+  }
+
+  .options-container {
+    flex-direction: row; /* Keep options in a row */
+    justify-content: flex-start; /* Align options to the start */
+    margin-top: 100px; /* Adjust spacing */
+  }
+
+  .option {
+    width: auto; /* Allow options to adjust width based on content */
+    padding: 0.8em; /* Adjust padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-container h4 {
+    font-size: 24px; /* Further adjust heading size for smaller screens */
+  }
+
+  .news-card {
+    margin: 0.5em 0;
+  }
+
+  .view-button {
+    font-size: 0.8em; /* Adjust button size */
+  }
+}
+
+/* Hide options container when scrolling down */
+.hidden {
+  display: none;
+}

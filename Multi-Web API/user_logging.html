@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Interaction Logging</title>
+    <link rel="stylesheet" href="user_logging.css"> <!-- Link to external CSS file -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <button class="back-button" id="backButton"><i class="bx bx-arrow-back"></i></button>
+    <div class="container">
+        <h2>User Interaction Logs</h2>
+        <div>
+            <button class="chart-button" id="chartButton">Chart</button>
+            <button class="reset-button" id="resetButton">Reset Data</button>
+        </div>
+        <table id="interactionTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Log rows will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Select the back button
+        const backButton = document.getElementById('backButton');
+
+        // Add event listener to handle click
+        backButton.addEventListener('click', function() {
+            // Redirect to index.html
+            window.location.href = 'index.html';
+        });
+
+        // Select the chart button
+        const chartButton = document.getElementById('chartButton');
+
+        // Add event listener to handle click
+        chartButton.addEventListener('click', function() {
+            // Redirect to chart.html
+            window.location.href = 'chart.html';
+        });
+
+        // Select the reset button
+        const resetButton = document.getElementById('resetButton');
+
+        // Add event listener to handle click
+        resetButton.addEventListener('click', function() {
+            // Reset interactions in localStorage
+            localStorage.removeItem('interactions');
+            // Clear table rows
+            const tableBody = document.querySelector('#interactionTable tbody');
+            tableBody.innerHTML = '';
+        });
+
+        // Function to retrieve and display logs from localStorage
+        const displayInteractionLogs = () => {
+            const interactions = JSON.parse(localStorage.getItem('interactions')) || [];
+
+            const tableBody = document.querySelector('#interactionTable tbody');
+            tableBody.innerHTML = '';
+
+            interactions.forEach((log, index) => {
+                const row = document.createElement('tr');
+                const logDate = new Date(log.timestamp);
+                const dateOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
+                const timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${logDate.toLocaleDateString('en-US', dateOptions)}</td>
+                    <td>${logDate.toLocaleTimeString('en-US', timeOptions)}</td>
+                    <td>${log.action}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+            
+        };
+
+        // Call displayInteractionLogs when the page loads
+        window.onload = displayInteractionLogs;
+    </script>
+</body>
+</html>

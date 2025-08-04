@@ -1,0 +1,83 @@
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, rgba(255, 0, 102, 0.415), rgba(68, 137, 255, 0.574)); /* Gradient background */
+    background-size: cover; /* Ensure full coverage */
+    background-repeat: no-repeat; /* Prevent background from repeating */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+/* Back Button Styling */
+.back-button {
+    position: fixed;
+    top: 50px;
+    left: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10; /* Ensure the button is on top */
+}
+
+/* Container Styling */
+.container {
+    width: 100%;
+    max-width: 1000px; /* Optional: set a max-width */
+    margin-top: 20px; /* Adjust the margin to control vertical spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px; /* Add padding to center content and avoid edges */
+}
+
+/* Header Styling */
+h2 {
+    text-align: center;
+    font-size: 28px; /* Adjusted font size for smaller screens */
+    color: #fff; /* White text color */
+    margin-bottom: 30px; /* Reduced margin for tighter spacing */
+}
+
+/* Canvas Styling */
+canvas {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Add padding for better spacing */
+        justify-content: flex-start; /* Align items to the top */
+    }
+
+    .back-button {
+        top: 40px;
+        left: 20px;
+        font-size: 18px;
+        padding: 3px;
+    }
+
+    .container {
+        margin-top: 60px; /* Added margin to separate from the back button */
+        padding: 0 15px; /* Add more padding for better spacing */
+    }
+
+    h2 {
+        font-size: 24px; /* Further reduce font size for smaller screens */
+        margin-bottom: 20px; /* Further reduce margin for tighter spacing */
+    }
+
+    canvas {
+        padding: 15px; /* Reduce padding for better fit on small screens */
+    }
+}

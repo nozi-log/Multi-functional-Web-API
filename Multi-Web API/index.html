@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Welcome to Dashboard</h1>
+    <div class="container">
+        <!-- Boxes for different functionalities -->
+        <div class="box" onclick="logInteraction('Clicked Weather Box'); location.href='weather.html'">
+            <img src="images/weather.png" alt="Weather">
+            <div class="box-title">Weather</div>
+        </div>
+        <div class="box" onclick="logInteraction('Clicked News Box'); location.href='news.html'">
+            <img src="images/news.png" alt="News">
+            <div class="box-title">News</div>
+        </div>
+        <div class="box" onclick="logInteraction('Clicked Social Media Box'); location.href='social_media.html'">
+            <img src="images/socialmedia.png" alt="Social Media">
+            <div class="box-title">Social Media</div>
+        </div>
+        <div class="box" onclick="logInteraction('Clicked User Logging Box'); location.href='user_logging.html'">
+            <img src="images/user.png" alt="User Logging">
+            <div class="box-title">User Logging</div>
+        </div>
+    </div>
+
+    <!-- JavaScript for logging interactions -->
+    <script>
+        const logInteraction = (action) => {
+            const currentDate = new Date();
+            const log = {
+                action: action,
+                timestamp: currentDate.toLocaleString()
+            };
+
+            // Retrieve existing interactions or initialize an empty array
+            let interactions = JSON.parse(localStorage.getItem('interactions')) || [];
+            // Add new interaction log
+            interactions.push(log);
+            // Store updated interactions back into localStorage
+            localStorage.setItem('interactions', JSON.stringify(interactions));
+        };
+    </script>
+</body>
+</html>

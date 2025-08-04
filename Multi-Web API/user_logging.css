@@ -1,0 +1,161 @@
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, rgba(255, 0, 102, 0.415), rgba(68, 137, 255, 0.574)); /* Gradient background */
+    background-size: cover; /* Ensure full coverage */
+    background-repeat: no-repeat; /* Prevent background from repeating */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+.back-button {
+    position:fixed;
+    top: 50px;
+    left: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Container Styling */
+.container {
+    width: 100%;
+    max-width: 1000px; /* Optional: set a max-width */
+    margin-top: 20px; /* Adjust the margin to control vertical spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px; /* Add padding to center content and avoid edges */
+}
+
+/* Header Styling */
+h2 {
+    text-align: center;
+    font-size: 28px; /* Adjusted font size for smaller screens */
+    color: #fff; /* White text color */
+    margin-bottom: 30px; /* Reduced margin for tighter spacing */
+}
+
+/* Table Styling */
+table {
+    width: 80%; /* Full width on smaller screens */
+    margin: 0 auto; /* Center the table horizontally */
+    border-collapse: collapse;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* White background for table */
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #c2b1ff;
+    padding: 10px; /* Adjusted padding for better spacing */
+    text-align: left;
+    transition: background-color 0.3s ease;
+    font-size: 14px; /* Adjusted font size for smaller screens */
+}
+
+th {
+    background-color: #d5c4ff; 
+    text-align: center;
+    color: #555; /* Dark gray text color */
+}
+
+td {
+    background-color: #f9f9f9; /* Lighter gray background for table cells */
+    color: #333; /* Dark gray text color */
+    border-bottom: 1px solid #ddd; /* Slightly more visible border */
+}
+
+tr:last-child td {
+    border-bottom: none; /* Remove bottom border for the last row */
+}
+
+td:first-child {
+    border-top-left-radius: 8px; /* Rounded corners for top left cell */
+    border-bottom-left-radius: 8px; /* Rounded corners for bottom left cell */
+}
+
+td:last-child {
+    border-top-right-radius: 8px; /* Rounded corners for top right cell */
+    border-bottom-right-radius: 8px; /* Rounded corners for bottom right cell */
+}
+
+/* Optional: Add some spacing between table rows */
+tr {
+    border-spacing: 0 8px; /* Reduced spacing between rows */
+}
+
+/* Chart Button Styling */
+.chart-button {
+    background: linear-gradient(135deg, #ff007a, #4489ff); /* Vibrant gradient background */
+    border: none; /* Remove default border */
+    color: #fff; /* White text color */
+    font-size: 18px; /* Font size */
+    padding: 10px 20px; /* Padding for spacing */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    margin-bottom: 20px; /* Space below the button */
+}
+
+.chart-button:hover {
+    background: linear-gradient(135deg, #ff3399, #6699ff); /* Slightly different gradient on hover */
+    transform: translateY(-2px); /* Lift button on hover */
+}
+
+.chart-button:active {
+    transform: translateY(0); /* Reset button position on click */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px; /* Further reduce font size for smaller screens */
+        margin-bottom: 20px; /* Further reduce margin for tighter spacing */
+    }
+
+    th, td {
+        padding: 8px; /* Adjust padding for smaller screens */
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+
+    .back-button {
+        top: 40px;
+        left: 20px;
+        font-size: 18px;
+        padding: 3px;
+    }
+}
+
+/* Reset Button Styling */
+.reset-button {
+    background: linear-gradient(135deg, #ff007a, #4489ff); /* Vibrant gradient background */
+    border: none; /* Remove default border */
+    color: #fff; /* White text color */
+    font-size: 18px; /* Font size */
+    padding: 10px 20px; /* Padding for spacing */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    margin-bottom: 20px; /* Space below the button */
+}
+
+.reset-button:hover {
+    background: linear-gradient(135deg, #ff3399, #6699ff); /* Slightly different gradient on hover */
+    transform: translateY(-2px); /* Lift button on hover */
+}
+
+.reset-button:active {
+    transform: translateY(0); /* Reset button position on click */
+}
